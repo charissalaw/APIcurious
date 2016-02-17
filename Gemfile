@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'pry'
 gem 'figaro'
 gem 'omniauth-tumblr', '~> 1.2'
-gem 'simplecov'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
@@ -36,9 +35,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem "simplecov", :require => false, :group => :test
+  gem 'capybara'
+  gem 'launchy'
+  gem 'faraday'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
+end
+
+group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
