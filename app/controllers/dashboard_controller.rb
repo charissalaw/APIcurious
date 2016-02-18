@@ -1,10 +1,7 @@
 class DashboardController < ApplicationController
 
   def show
-    @posts = blog_service.posts
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-    end
+    @posts = blog_service(current_user).posts
+    # imageurl post["photos"][0]["alt_sizes"][0]["url"]
   end
 end
