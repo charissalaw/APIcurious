@@ -1,0 +1,80 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/charissalawrence/Documents/Turing/Module3/APIcurious/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/charissalawrence/Documents/Turing/Module3/APIcurious/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/charissalawrence/Documents/Turing/Module3/APIcurious/app/controllers/dashboard_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/charissalawrence/Documents/Turing/Module3/APIcurious/app/controllers/home_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/charissalawrence/Documents/Turing/Module3/APIcurious/app/controllers/sessions_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/charissalawrence/Documents/Turing/Module3/APIcurious/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1455735038
+  }
+}
