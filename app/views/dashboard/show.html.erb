@@ -7,10 +7,16 @@
     <h2 class="home"> <%= current_user.blog_url %> </h2>
     <%= link_to "Logout", logout_path, method: 'delete', class: "btn btn-lg btn-default btn-home" %>
   </div>
+  <br>
   <div class="col-md-2"></div>
   <div class="">
     <% @posts.each do |post| %>
-      <%= post %>
+      <%= post["source_title"] %>
+      <br>
+      <% if post["type"] == "photo" && post["source_title"] == "beewalker"%>
+        <%= image_tag post["image_permalink"], height: '100' %>
+        <br>
+      <% end %>
     <% end %>
 
   </div>

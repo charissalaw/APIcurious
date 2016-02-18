@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
-  def blog_service
-    @blog_service ||= BlogService.new if current_user
+  def blog_service(current_user)
+    @blog_service ||= BlogService.new(current_user) if current_user
   end
 end
