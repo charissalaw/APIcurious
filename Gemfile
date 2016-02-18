@@ -4,6 +4,7 @@ gem 'pry'
 gem 'figaro'
 gem 'omniauth-tumblr', '~> 1.2'
 gem 'simplecov'
+gem 'tumblr_client'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
