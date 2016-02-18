@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
-
+  
   def show
-    binding.pry
-    @posts = User.posts
+    @posts = blog_service.posts
   end
 end
