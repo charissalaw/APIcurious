@@ -13,8 +13,8 @@
     <% @posts.each do |post| %>
       <%= post["source_title"] %>
       <br>
-      <% if post["type"] == "photo" && post["source_title"] == "beewalker"%>
-        <%= image_tag post["image_permalink"], height: '100' %>
+      <% if post["type"] == "photo" %>
+        <%= image_tag post["photos"][0]["alt_sizes"][2]["url"], height: '300' %>
         <br>
       <% end %>
     <% end %>
