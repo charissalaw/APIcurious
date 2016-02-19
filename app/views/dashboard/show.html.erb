@@ -16,9 +16,17 @@
   <div class="box">
     <% @posts.each do |post| %>
       <h2 class="intro-text text-center"><%= post["source_title"] %></h2>
-      <br>
+      <%= post["type"] %>
       <% if post["type"] == "photo" %>
         <%= image_tag post["photos"][0]["alt_sizes"][2]["url"], height: '300' %>
+        <br>
+      <% end %>
+      <% if post["type"] == "video" %>
+        <%= %Q{#{post["player"][2]["embed_code"]}}.html_safe %>
+        <br>
+      <% end %>
+      <% if post["type"] == "text" %>
+        <%= post["body"] %>
         <br>
       <% end %>
       <div class= "btn">

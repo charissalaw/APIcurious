@@ -15,24 +15,4 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.service
-    BlogService.new
-  end
-
-  def self.posts
-    service.posts
-  end
-
-  # def self.all
-  #   service.client.map {|client| build_object(client)}
-  #   binding.pry
-  # end
-
-  private
-
-    def self.build_object(data)
-      OpenStruct.new(data)
-      #instead of doing all.first.title
-    end
-
 end
