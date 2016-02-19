@@ -12,6 +12,8 @@
     <%= link_to "Logout", logout_path, method: 'delete', class: "btn btn-lg btn-default btn-home" %>
   </div>
   <br>
+  <%= link_to "Your Feed", feed_path %>
+  <br>
   <div class="col-md-2"></div>
   <div class="">
     <% @posts.each do |post| %>

@@ -1,10 +1,17 @@
 class BlogService
 
-  attr_reader :current_user, :api_key
+  attr_reader :current_user, :api_key, :client
 
   def initialize(current_user)
     @api_key = ENV["TUMBLR_KEY"]
     @current_user = current_user
+    # Authenticate via OAuth
+    @client = Tumblr::Client.new({
+      :consumer_key => ENV["TUMBLR_KEY"],
+      :consumer_secret => ENV["TUMBLR_SECRET"],
+      :oauth_token => current_user.token,
+      :oauth_token_secret => current_user.secret
+    })
   end
 
   def posts
@@ -20,23 +27,21 @@ class BlogService
   end
 
   def like(post_id, reblog_key)
-    # built into tumblr, make button and
-    # needs Oauth, so do curren_user.token somehow
-    # Authenticate via OAuth
-    client = Tumblr::Client.new({
-      :consumer_key => ENV["TUMBLR_KEY"],
-      :consumer_secret => ENV["TUMBLR_SECRET"],
-      :oauth_token => current_user.token,
-      :oauth_token_secret => current_user.secret
-    })
-    #Make the request
     client.like post_id.to_i, reblog_key
-
-    #when i click a like button on the post, call this method
-
   end
 
-  private
+  def following
+    client.following
+  end
+
+  def new_posts(blog_name)
+    short_name = blog_name[7..-2]
+    client.posts short_name, :limit => 3, :reblog_info => true
+  end
+
+  def reblog(post_id, reblog_key)
+    client.reblog "#{current_user.blog_name}.tumblr.com", :id => post_id.to_i, :reblog_key => reblog_key
+  end
 
 
 end
