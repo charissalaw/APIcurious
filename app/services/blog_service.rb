@@ -43,5 +43,9 @@ class BlogService
     client.reblog "#{current_user.blog_name}.tumblr.com", :id => post_id.to_i, :reblog_key => reblog_key
   end
 
+  def embed(youtube_url)
+    youtube_id = youtube_url.split("=").last
+    content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{youtube_id}")
+  end
 
 end
