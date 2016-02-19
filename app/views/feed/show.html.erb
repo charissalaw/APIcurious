@@ -22,18 +22,6 @@
           </div>
         <% end %>
 
-        <% if post["type"] == "text" %>
-          <br>
-          <%= post["title"] %>
-          <br>
-          <%= post["body"] %>
-          <br>
-          <div class="btn-group inline">
-            <div class="btn"><%= button_to "Like", {:controller => "feed", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"]} %></div>
-            <div class="btn"><%= button_to "Reblog", {:controller => "feed", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"], :method => :reblog} %></div>
-          </div>
-        <% end %>
-
       <% end %>
     <% end %>
   </div>
