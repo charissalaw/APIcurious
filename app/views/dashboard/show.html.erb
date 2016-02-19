@@ -23,8 +23,18 @@
           <%= button_to "Like", {:controller => "dashboard", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"]} %>
         </div>
       <% end %>
+
       <% if post["type"] == "video" %>
         <%= %Q{#{post["player"][2]["embed_code"]}}.html_safe %>
+        <br>
+        <div class= "btn">
+          <%= button_to "Like", {:controller => "dashboard", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"]} %>
+        </div>
+      <% end %>
+
+      <% if post["type"] == "text" %>
+        <h2 class="intro-text text-center"> <%= post["title"] %> </h2>
+        <%= %Q{#{post["body"]}}.html_safe %>
         <br>
         <div class= "btn">
           <%= button_to "Like", {:controller => "dashboard", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"]} %>
