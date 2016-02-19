@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
     user.blog_url = auth["info"]["blogs"][0]["url"]
     user.avatar = auth["info"]["avatar"]
     user.token = auth["credentials"]["token"]
+    user.secret = auth["credentials"]["secret"]
 
     user.save
     user
