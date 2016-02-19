@@ -1,0 +1,32 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<div class="">
+  <% @following.each do |blog| %>
+    <%= blog["name"] %>
+    <br>
+    <% blog_service(current_user).new_posts(blog["url"])["posts"].each do |post| %>
+      <%= post["type"] %>
+
+      <% if post["type"] == "photo" %>
+        <br>
+        <%= image_tag post["photos"][0]["alt_sizes"][2]["url"], height: '300' %>
+        <br>
+        <%= button_to "Like", {:controller => "feed", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"]} %>
+        <%= button_to "Reblog", {:controller => "feed", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"], :method => :reblog} %>
+      <% end %>
+
+      <% if post["type"] == "text" %>
+        <br>
+        <%= post["title"] %>
+        <br>
+        <%= post["body"] %>
+        <br>
+        <%= button_to "Like", {:controller => "feed", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"]} %>
+      <% end %>
+
+    <% end %>
+  <% end %>
+
+</div>
