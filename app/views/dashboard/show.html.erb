@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <div class="">
   <div class="col-md-2"></div>
   <div class="col-md-8">
@@ -17,6 +21,7 @@
         <%= image_tag post["photos"][0]["alt_sizes"][2]["url"], height: '300' %>
         <br>
       <% end %>
+      <%= button_to "Like", {:controller => "dashboard", :action => "update", :post_id => post["id"], :reblog_key => post["reblog_key"]} %>
     <% end %>
 
   </div>
