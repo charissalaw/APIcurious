@@ -1,28 +1,8 @@
-== README
+== Mock Tumblr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This app uses the Tumblr API and OAuth to mimick a users Tumblr account. User logs in using Tumblr OAuth and sees their current tumblr blog posts, followers, videos, etc. Any changes made to app will be reflected on Tumblr with ability to like posts, follow users, and share posts.
+ * Cool feature:  In- app video streaming
+ * Tech Stack:   Full api immersion, OAuth, JavaScript video streaming 
+ 
+Online heroku app can be reached here:
+{Go To App}[https://mocktumblr.herokuapp.com]
